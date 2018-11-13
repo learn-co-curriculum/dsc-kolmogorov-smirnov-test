@@ -1,5 +1,5 @@
 
-# Testing for Normality - The Kolmogorov-Smirnov Test
+# The Kolmogorov-Smirnov Test
 
 ## Introduction
 
@@ -11,9 +11,11 @@ In this lesson we shall look at a popular statistical test for satisfying the no
 
 ## Objectives
 
+You will be able to:
+
 * Explain Normality Assumption and role of statistical tests
-* Describe and calculate a 1 sample ks test
-* describe and explain a two sample ks test
+* Describe and calculate a one sample Kolmogorov-Smirnov test
+* Describe and explain a two sample Kolmogorov-Smirnov test
 
 ## Normality Assumption
 
