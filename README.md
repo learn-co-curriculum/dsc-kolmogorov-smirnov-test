@@ -92,7 +92,7 @@ In a study done from various modules of a data science course with 60 students, 
 
 It was expected that 12 students from each module would join advanced ML. 
 
-Let's use K-S test to find if there is any difference among student classes with regard to their intention of joining the Drama Club.
+Let's use K-S test to find if there is any difference among student classes with regard to their intention of joining the advanced machine learning module.
 
 First we need to set up our null hypothesis. 
 
