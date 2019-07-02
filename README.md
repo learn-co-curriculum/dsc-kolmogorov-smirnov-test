@@ -41,13 +41,12 @@ A KS test provides a way of comparing distributions, whether two sample distribu
 
 The most intuitive way to think about the empirical distribution function is that it relates to the CDF in a similar way to how a histogram relates to a probability density function. Let's look at following figures to get this idea:
 
-![](images/dists1.png)
-
+<img src="images/rnorm.png" width = 800>
 
 The left figure shows a regular histogram with samples looking like a normal distribution. The right figure shows the same samples except each bin in the histogram contains the cumulative count of samples up to that bin, which approximates the shape of the CDF for this random variable. Now the right figure doesn't exactly represent an empirical distribution function because the Y-axis is not normalized to  1  and the samples are binned instead of just plotted cumulatively. Nonetheless, the idea remains the same. An example of an empirical CDF is given below:
 
 
-![](images/dists2.png)
+<img src="images/cumul_prob.png" width = 400>
 
 This image sums up the intuition for empirical distribution function. The blue line is our empirical CDF whereas the  grey one is our theoretical CDF (i.e. plotted using parameters and fitting a probability function).
 
@@ -173,7 +172,7 @@ Fx 0.1 0.2 0.3 0.4 0.5 0.6 0.6 0.6 0.6 0.6 0.6 0.7 0.7  0.7  0.8  0.8  0.9  1.0
 Fy 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.2 0.4 0.5 0.6 0.6 0.8  0.9  0.9  1.0  1.0  1.0
 
 ```
-<img src="images/cdf.png" width = 500>
+<img src="images/dist_2.png" width = 600>
 
 The Kolmogorov-Smirnov statistic is again the maximum absolute difference of the two observed distribution functions. From above image, and also by feeding above values in the given formula, we get **d = 0.6**.
 
