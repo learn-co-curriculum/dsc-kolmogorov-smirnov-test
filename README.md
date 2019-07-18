@@ -70,7 +70,7 @@ where
 - **F<sub>0</sub>(X)** = (No.of observations ≤ X)/(Total no.of observations) i.e. the non parametric empirical distribution
 - **F<sub>r</sub>(X)** = The theoretical frequency distribution of X - parametric (e.g. based on mean value) 
 
-![](images/d.gif)
+<img src="./images/new_d.png" width="600">
 
 **Null Hypothesis:** There is no difference between the distribution of our sample and a normal distribution. 
 
