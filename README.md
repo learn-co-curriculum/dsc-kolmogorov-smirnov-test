@@ -3,38 +3,38 @@
 
 ## Introduction
 
-During data analysis, You have to satisfy a number of assumptions for the underlying dataset as we have seen before. One of the most common assumptions that you will come across is the "Normality Assumption" i.e. the underlying data belongs to a normal distribution.
+During data analysis, you have to satisfy a number of assumptions for the underlying dataset as we have seen before. One of the most common assumptions that you will come across is the "Normality Assumption", i.e., the underlying data roughly follows a normal distribution.
 
-If a certain distribution is not found to be normally distributed (i.e. data with kurtosis and skew while doing linear regression), you may first answer a question like: “Given my data … if there is a deviation from normality, will there be a material impact on my results?”
+If the data is not found to be normally distributed (i.e. data with kurtosis and skew while doing linear regression), you may first answer a question like: “Given my data … if there is a deviation from normality, will there be a material impact on my results?”
 
-In this lesson, we'll look at a popular statistical test for satisfying the normality assumption, The Kolmogorov-Smirnov Test, or simply, the KS-test.
+In this lesson, we'll look at a popular statistical test for satisfying the normality assumption, the Kolmogorov-Smirnov test, or simply, the K-S test.
 
 
 ## Objectives
 
 You will be able to:
 
-* Explain Normality Assumption and role of statistical tests
-* Describe and calculate a one sample Kolmogorov-Smirnov test
-* Describe and explain a two sample Kolmogorov-Smirnov test
+- Explain the role of the normality assumption in statistical tests 
+- Calculate a one-and two-sample Kolmogorov-Smirnov tests
+- Interpret the results of a one- and two-sample Kolmogorov-Smirnov tests 
 
-## Normality Assumption
+## Normality assumption
 
 It is a known fact that formal normality tests always reject the huge sample sizes we work with today. When n (our sample size) gets large, even the smallest deviation from perfect normality will lead to a significant result. And as every dataset has some degree of random noise, no single dataset will be a **perfectly** normally distributed sample. 
 
->**In applied statistics, the question is not whether the data/residuals are perfectly normal, but normal enough for the assumptions to hold**.
+> **In applied statistics, the question is not whether the data/residuals are perfectly normal, but normal enough for the assumptions to hold**.
 
-This question is answered through visualization techniques we've seen before like qqplots, Boxplots, of more advanced statistical tests including:
+This question is answered through visualization techniques we've seen before like qqplots, boxplots, or more advanced statistical tests including:
 
 - The Shapiro-Wilk test;
 - The Anderson-Darling test, and;
-- The Kolmogorov-Smirnov test.
+- The Kolmogorov-Smirnov test 
 
-In this lesson, we'll focus on the KS-test which will give you a strong foundation to help you understand and implement other tests when needed. 
+In this lesson, we'll focus on the K-S test which will give you a strong foundation to help you understand and implement other tests when needed. 
 
-## The Kolmogorov-Smirnov Test
+## Kolmogorov-Smirnov Test
 
-A KS test provides a way of comparing distributions, whether two sample distributions or a sample distribution with a theoretical distribution - comparable to what we've already seen when we learned about one sample or two-sample t-tests. The distributions are compared in their cumulative form as **Empirical Cumulative Distribution Functions**. The test statistic in KS test used to compare distributions is simply the maximum vertical distance between the two functions. Essentially, we are testing the sample data against another sample, to compare their distributions for similarities.
+A K-S test provides a way of comparing distributions, whether two sample distributions or a sample distribution with a theoretical distribution - comparable to what we've already seen when we learned about one sample or two-sample t-tests. The distributions are compared in their cumulative form as **Empirical Cumulative Distribution Functions**. The test statistic in K-S test used to compare distributions is simply the maximum vertical distance between the two functions. Essentially, we are testing the sample data against another sample, to compare their distributions for similarities.
 
 ### The Empirical Cumulative Distribution Function (ECDF)
 
@@ -44,7 +44,7 @@ The most intuitive way to think about the empirical distribution function is tha
 
 <img src="images/rnorm.png" width = 800>
 
-The left figure shows a regular histogram with samples looking like a normal distribution. The right figure shows the same samples except each bin in the histogram contains the cumulative count of samples up to that bin, which approximates the shape of the CDF for this random variable. Now the right figure doesn't exactly represent an empirical distribution function because the Y-axis is not normalized to  1  and the samples are binned instead of just plotted cumulatively. Nonetheless, the idea remains the same. An example of an empirical CDF is given below:
+The left figure shows a regular histogram with samples looking like a normal distribution. The right figure shows the same samples except each bin in the histogram contains the cumulative count of samples up to that bin, which approximates the shape of the CDF for this random variable. Now the right figure doesn't exactly represent an empirical distribution function because the Y-axis is not normalized to 1 and the samples are binned instead of just plotted cumulatively. Nonetheless, the idea remains the same. An example of an empirical CDF is given below:
 
 
 <img src="images/cumul_prob.png" width = 400>
@@ -56,7 +56,7 @@ X . Then, the empirical distribution function,  $F̂(x)$ , is a CDF:
 
 $$\hat{F}(x) = \frac{\text{# of elements in sample} \leq x}{n} = \frac{1}{n} \Sigma_{i=1}^n I(x_i \leq x) \tag{1}$$
 
-### One-Sample KS test
+### One-Sample K-S test
 
 This is also known as the **Kolmogorov-Smirnov Goodness of Fit Test**. It calculates the similarity between an observed (empirical) distribution and a completely specified theoretical continuous distribution. It is sensitive to all attributes of a distribution including mean, variance and shape.
 
@@ -96,7 +96,7 @@ Let's use K-S test to find if there is any difference among student classes with
 
 First, we need to set up our null hypothesis. 
 
-> Ho: There is no difference among students of different modules with respect to their intention of joining advanced ML. 
+> $H_{0}$: There is no difference among students of different modules with respect to their intention of joining advanced ML. 
 
 
 ```
@@ -132,11 +132,11 @@ $${d (0.05) = \frac{1.36}{\sqrt{n}}} \\[7pt]
 Since the calculated d value (0.183) is greater than the critical value (0.175), hence we reject the null hypothesis and conclude that there is a difference among students of different modules in their intention of joining the advanced ML course. 
 
 
-### Two-Sample KS Test
+### Two-Sample K-S Test
 
-The two-sample KS test checks if two **independent** samples have been drawn from the same population, or, equivalently, from two identical populations (X = Y).
+The two-sample K-S test checks if two **independent** samples have been drawn from the same population, or, equivalently, from two identical populations (X = Y).
 
-As with the one-sample test, it is moderately sensitive to all parameters of the distribution. The one-tailed version of this test has a specific purpose i.e .to test whether values of one population are larger than values of another population. Similar to 1-sample test, cumulative distributions are compared, but here two sample distributions are compared instead of a sample distribution and a theoretical distribution as we saw above. For the two-tailed version of the test, the test statistic (d) is the largest absolute deviation between the two observed cumulative step functions, irrespective of the direction of the difference.
+As with the one-sample test, it is moderately sensitive to all parameters of the distribution. The one-tailed version of this test has a specific purpose i.e .to test whether values of one population are larger than values of another population. Similar to one-sample test, cumulative distributions are compared, but here two sample distributions are compared instead of a sample distribution and a theoretical distribution as we saw above. For the two-tailed version of the test, the test statistic (d) is the largest absolute deviation between the two observed cumulative step functions, irrespective of the direction of the difference.
 
 > The null hypothesis states for this test that there is no difference between the two distributions. The d-statistic is calculated in the same manner as we saw above.
 
@@ -187,12 +187,10 @@ Since 0.6 < 0.645, we retain the null hypothesis in this case.
 ---
 Kolmogorov-Smirnov tests have the advantages that:
 - the distribution of statistic does not depend on cumulative distribution function being tested and  
-- the test is exact. 
+- the test is exact  
 
 They have the disadvantage that they are more sensitive to deviations near the center of the distribution than at the tails.
 
- 
-
 ## Summary 
 
-In this lesson, we looked at KS test and how this test can be used to test for normality assumptions. We looked at a one sample Ks test and a two-sample ks tests with simple examples. Next, we'll see how to implement these tests in python. 
+In this lesson, we looked at K-S test and how this test can be used to test for normality assumptions. We also looked at a one-sample K-S test and a two-sample K-S tests with simple examples. Next, we'll see how to implement these tests in Python. 
