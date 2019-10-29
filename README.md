@@ -3,7 +3,7 @@
 
 ## Introduction
 
-During data analysis, you have to satisfy a number of assumptions for the underlying dataset as we have seen before. One of the most common assumptions that you will come across is the "Normality Assumption", i.e., the underlying data roughly follows a normal distribution.
+During data analysis, you have to satisfy a number of assumptions for the underlying dataset. One of the most common assumptions that you will come across is the "Normality Assumption", i.e., the underlying data roughly follows a normal distribution.
 
 If the data is not found to be normally distributed (i.e. data with kurtosis and skew while doing linear regression), you may first answer a question like: “Given my data … if there is a deviation from normality, will there be a material impact on my results?”
 
@@ -20,17 +20,17 @@ You will be able to:
 
 ## Normality assumption
 
-It is a known fact that formal normality tests always reject the huge sample sizes we work with today. When n (our sample size) gets large, even the smallest deviation from perfect normality will lead to a significant result. And as every dataset has some degree of random noise, no single dataset will be a **perfectly** normally distributed sample. 
+Formal normality tests always reject the huge sample sizes we work with today. When n (our sample size) gets large, even the smallest deviation from perfect normality will lead to a significant result. And as every dataset has some degree of random noise, no single dataset will be a **perfectly** normally distributed sample. 
 
 > **In applied statistics, the question is not whether the data/residuals are perfectly normal, but normal enough for the assumptions to hold**.
 
-This question is answered through visualization techniques we've seen before like qqplots, boxplots, or more advanced statistical tests including:
+This question is answered through visualization techniques like qqplots, boxplots, or more advanced statistical tests including:
 
 - The Shapiro-Wilk test;
 - The Anderson-Darling test, and;
 - The Kolmogorov-Smirnov test 
 
-In this lesson, we'll focus on the K-S test which will give you a strong foundation to help you understand and implement other tests when needed. 
+In this lesson, we'll focus on the Kolmogorov-Smirnov test (K-S test) which will give you a strong foundation to help you understand and implement other tests when needed. 
 
 ## Kolmogorov-Smirnov Test
 
@@ -40,7 +40,7 @@ A K-S test provides a way of comparing distributions, whether two sample distrib
 
 > An empirical cumulative distribution function (CDF) is a non-parametric estimator of the underlying CDF of a random variable. It assigns a probability to each data point, orders the data from smallest to largest in value, and calculates the sum of the assigned probabilities up to and including each data point.
 
-The most intuitive way to think about the empirical distribution function is that it relates to the CDF in a similar way to how a histogram relates to a probability density function. Let's look at the following figures to get this idea:
+The most intuitive way to think about the empirical distribution function is that it relates to the cumulative distribution function (CDF) in a similar way to how a histogram relates to a probability density function. Let's look at the following figures to get this idea:
 
 <img src="images/rnorm.png" width = 800>
 
@@ -58,7 +58,7 @@ $$\hat{F}(x) = \frac{\text{# of elements in sample} \leq x}{n} = \frac{1}{n} \Si
 
 ### One-Sample K-S test
 
-This is also known as the **Kolmogorov-Smirnov Goodness of Fit Test**. It calculates the similarity between an observed (empirical) distribution and a completely specified theoretical continuous distribution. It is sensitive to all attributes of a distribution including mean, variance and shape.
+This is also known as the **Kolmogorov-Smirnov Goodness of Fit test**. It calculates the similarity between an observed (empirical) distribution and a completely specified theoretical continuous distribution. It is sensitive to all attributes of a distribution including mean, variance, and shape.
 
 The key assumption of the one-sample test is that the theoretical distribution is fully defined continuous distribution, in terms of its parameters. This obviously means that its most common use case is that of testing normality. The test statistic, $d$,  is simply the largest deviation between the observed cumulative function and the expected theoretical cumulative frequency distribution, i.e. 
 
@@ -193,4 +193,4 @@ They have the disadvantage that they are more sensitive to deviations near the c
 
 ## Summary 
 
-In this lesson, we looked at K-S test and how this test can be used to test for normality assumptions. We also looked at a one-sample K-S test and a two-sample K-S tests with simple examples. Next, we'll see how to implement these tests in Python. 
+In this lesson, we looked at K-S test and how this test can be used to test for normality assumptions. We also looked at a one-sample K-S test and a two-sample K-S test with simple examples. Next, we'll see how to implement these tests in Python. 
