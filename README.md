@@ -15,8 +15,8 @@ In this lesson, we'll look at a popular statistical test for satisfying the norm
 You will be able to:
 
 - Explain the role of the normality assumption in statistical tests 
-- Calculate a one-and two-sample Kolmogorov-Smirnov tests
-- Interpret the results of a one- and two-sample Kolmogorov-Smirnov tests 
+- Calculate a one-and two-sample Kolmogorov-Smirnov test
+- Interpret the results of a one- and two-sample Kolmogorov-Smirnov test
 
 ## Normality assumption
 
