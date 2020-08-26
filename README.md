@@ -51,20 +51,20 @@ The left figure shows a regular histogram with samples looking like a normal dis
 
 This image sums up the intuition for empirical distribution function. The blue line is our empirical CDF whereas the  grey one is our theoretical CDF (i.e. plotted using parameters and fitting a probability function).
 
-If X is a random variable with CDF $F(x)=P(X≤x)$ , and  $x1,…,xn$ are i.i.d. random variables sampled from  
-X . Then, the empirical distribution function,  $F̂(x)$ , is a CDF:
+If X is a random variable with CDF  <img src="https://render.githubusercontent.com/render/math?math=F(x)=P(X≤x)"> , and   <img src="https://render.githubusercontent.com/render/math?math=x1,…,xn"> are i.i.d. random variables sampled from  
+X . Then, the empirical distribution function,   <img src="https://render.githubusercontent.com/render/math?math=F̂(x)"> , is a CDF:
 
-$$\hat{F}(x) = \frac{\text{# of elements in sample} \leq x}{n} = \frac{1}{n} \Sigma_{i=1}^n I(x_i \leq x) \tag{1}$$
+ <img src="https://render.githubusercontent.com/render/math?math=\hat{F}(x) = \frac{\text{# of elements in sample} \leq x}{n} = \frac{1}{n} \Sigma_{i=1}^n I(x_i \leq x) \tag{1}"> 
 
 ### One-Sample K-S test
 
 This is also known as the **Kolmogorov-Smirnov Goodness of Fit test**. It calculates the similarity between an observed (empirical) distribution and a completely specified theoretical continuous distribution. It is sensitive to all attributes of a distribution including mean, variance, and shape.
 
-The key assumption of the one-sample test is that the theoretical distribution is fully defined continuous distribution, in terms of its parameters. This obviously means that its most common use case is that of testing normality. The test statistic, $d$,  is simply the largest deviation between the observed cumulative function and the expected theoretical cumulative frequency distribution, i.e. 
+The key assumption of the one-sample test is that the theoretical distribution is fully defined continuous distribution, in terms of its parameters. This obviously means that its most common use case is that of testing normality. The test statistic,  <img src="https://render.githubusercontent.com/render/math?math=d"> ,  is simply the largest deviation between the observed cumulative function and the expected theoretical cumulative frequency distribution, i.e. 
 
-$$
+ <img src="https://render.githubusercontent.com/render/math?math=
 d	   =    	max(abs[F_0(X)-F_r(X)])
-$$
+"> 
 
 where
 - **d** is the maximum deviation Kolmogorov statistic 
@@ -96,7 +96,7 @@ Let's use K-S test to find if there is any difference among student classes with
 
 First, we need to set up our null hypothesis. 
 
-> $H_{0}$: There is no difference among students of different modules with respect to their intention of joining advanced ML. 
+>  <img src="https://render.githubusercontent.com/render/math?math=H_{0}"> : There is no difference among students of different modules with respect to their intention of joining advanced ML. 
 
 
 ```
@@ -112,20 +112,20 @@ Total	   n=60
 ```
 
 According to the formula above, 
-$$
+ <img src="https://render.githubusercontent.com/render/math?math=
 d	   =    	max(abs[F_0(X)-F_r(X)])
-$$
+"> 
 
-$$ d = 11/60 = 0.183$$
+ <img src="https://render.githubusercontent.com/render/math?math=d = 11/60 = 0.183"> 
 
 Here's the Smirnov d-statistic for reference: 
 ![](images/1samp.png)
 
 
 The table value of d at 5% significance level is given by
-$${d (0.05) = \frac{1.36}{\sqrt{n}}} \\[7pt]
+ <img src="https://render.githubusercontent.com/render/math?math={d (0.05) = \frac{1.36}{\sqrt{n}}} \\[7pt]
 \, = \frac{1.36}{\sqrt{60}} \\[7pt]
-\, = 0.175$$
+\, = 0.175"> 
 
 
 
@@ -140,7 +140,7 @@ As with the one-sample test, it is moderately sensitive to all parameters of the
 
 > The null hypothesis states for this test that there is no difference between the two distributions. The d-statistic is calculated in the same manner as we saw above.
 
-$$d	   =    	max[abs[{F_{n1}(X)-F_{n2}(X)}]]$$
+ <img src="https://render.githubusercontent.com/render/math?math=d	   =    	max[abs[{F_{n1}(X)-F_{n2}(X)}]]"> 
 
 
 - n1 = Observations from first sample.
@@ -180,7 +180,7 @@ The Kolmogorov-Smirnov statistic is again the maximum absolute difference of the
 For two samples, the 95% critical value can be approximated by
 the formula:
 
-$$d(0.05) = 1.36\sqrt{1/n_1 + 1/n_2} = 0.645$$
+ <img src="https://render.githubusercontent.com/render/math?math=d(0.05) = 1.36\sqrt{1/n_1 %2b 1/n_2} = 0.645"> 
 
 Since 0.6 < 0.645, we retain the null hypothesis in this case. 
 
