@@ -51,10 +51,9 @@ The left figure shows a regular histogram with samples looking like a normal dis
 
 This image sums up the intuition for empirical distribution function. The blue line is our empirical CDF whereas the  grey one is our theoretical CDF (i.e. plotted using parameters and fitting a probability function).
 
-If X is a random variable with CDF  <img src="https://render.githubusercontent.com/render/math?math=F(x)=P(X≤x)"> , and   <img src="https://render.githubusercontent.com/render/math?math=x1,…,xn"> are i.i.d. random variables sampled from  
-X . Then, the empirical distribution function,   <img src="https://render.githubusercontent.com/render/math?math=F̂(x)"> , is a CDF:
+If X is a random variable with CDF <img src="https://render.githubusercontent.com/render/math?math=F(x)=P(X≤x)">, and <img src="https://render.githubusercontent.com/render/math?math=x1,\ldots,xn"> are i.i.d. random variables sampled from X. Then, the empirical distribution function, <img src="https://render.githubusercontent.com/render/math?math=\hat{F}(x)"> , is a CDF:
 
- <img src="https://render.githubusercontent.com/render/math?math=\hat{F}(x) = \frac{\text{# of elements in sample} \leq x}{n} = \frac{1}{n} \Sigma_{i=1}^n I(x_i \leq x) \tag{1}"> 
+<img src="https://render.githubusercontent.com/render/math?math=%5Chat+F%28x%29+%3D+%5Cdfrac%7B%28%5Ctext%7B%23+of+elements+in+sample%7D%29+%5Cleq+x%7D%7Bn%7D+%3D+%5Cdfrac%7B1%7D%7Bn%7D+%5CSigma_%7Bi%3D1%7D%5En+I%28x_i+%5Cleq+x%29+%5Ctag%7B1%7D">
 
 ### One-Sample K-S test
 
@@ -62,9 +61,7 @@ This is also known as the **Kolmogorov-Smirnov Goodness of Fit test**. It calcul
 
 The key assumption of the one-sample test is that the theoretical distribution is fully defined continuous distribution, in terms of its parameters. This obviously means that its most common use case is that of testing normality. The test statistic,  <img src="https://render.githubusercontent.com/render/math?math=d"> ,  is simply the largest deviation between the observed cumulative function and the expected theoretical cumulative frequency distribution, i.e. 
 
- <img src="https://render.githubusercontent.com/render/math?math=
-d	   =    	max(abs[F_0(X)-F_r(X)])
-"> 
+ <img src="https://render.githubusercontent.com/render/math?math=d=max(abs[F_0(X)-F_r(X)])"> 
 
 where
 - **d** is the maximum deviation Kolmogorov statistic 
@@ -112,20 +109,16 @@ Total	   n=60
 ```
 
 According to the formula above, 
- <img src="https://render.githubusercontent.com/render/math?math=
-d	   =    	max(abs[F_0(X)-F_r(X)])
-"> 
+ <img src="https://render.githubusercontent.com/render/math?math=d=max(abs[F_0(X)-F_r(X)])"> 
 
- <img src="https://render.githubusercontent.com/render/math?math=d = 11/60 = 0.183"> 
+ <img src="https://render.githubusercontent.com/render/math?math=d=11/60 = 0.183"> 
 
 Here's the Smirnov d-statistic for reference: 
 ![](images/1samp.png)
 
 
 The table value of d at 5% significance level is given by
- <img src="https://render.githubusercontent.com/render/math?math={d (0.05) = \frac{1.36}{\sqrt{n}}} \\[7pt]
-\, = \frac{1.36}{\sqrt{60}} \\[7pt]
-\, = 0.175"> 
+ <img src="https://render.githubusercontent.com/render/math?math={d(0.05)=\frac{1.36}{\sqrt{n}}}\\[7pt]\,=\frac{1.36}{\sqrt{60}}\\[7pt]\,=0.175"> 
 
 
 
@@ -140,7 +133,7 @@ As with the one-sample test, it is moderately sensitive to all parameters of the
 
 > The null hypothesis states for this test that there is no difference between the two distributions. The d-statistic is calculated in the same manner as we saw above.
 
- <img src="https://render.githubusercontent.com/render/math?math=d	   =    	max[abs[{F_{n1}(X)-F_{n2}(X)}]]"> 
+ <img src="https://render.githubusercontent.com/render/math?math=d = max[abs[{F_{n1}(X)-F_{n2}(X)}]]"> 
 
 
 - n1 = Observations from first sample.
