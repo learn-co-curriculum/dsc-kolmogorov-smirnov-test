@@ -53,7 +53,7 @@ This image sums up the intuition for empirical distribution function. The blue l
 If X is a random variable with CDF $F(x)=P(X≤x)$ , and  $x1,…,xn$ are i.i.d. random variables sampled from  
 X . Then, the empirical distribution function,  $F̂(x)$ , is a CDF:
 
-$$\hat{F}(x) = \frac{\text{# of elements in sample} \leq x}{n} = \frac{1}{n} \Sigma_{i=1}^n I(x_i \leq x) \tag{1}$$
+$$\hat{F}(x) = \frac{\text{\# of elements in sample} \leq x}{n} = \frac{1}{n} \Sigma_{i=1}^n I(x_i \leq x) \tag{1}$$
 
 ### One-Sample K-S test
 
