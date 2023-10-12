@@ -1,4 +1,3 @@
-
 # The Kolmogorov-Smirnov Test
 
 ## Introduction
@@ -42,12 +41,12 @@ A K-S test provides a way of comparing distributions, whether two sample distrib
 
 The most intuitive way to think about the empirical distribution function is that it relates to the cumulative distribution function (CDF) in a similar way to how a histogram relates to a probability density function. Let's look at the following figures to get this idea:
 
-<img src="images/rnorm.png" width = 800>
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/rnorm.png" width = 800>
 
 The left figure shows a regular histogram with samples looking like a normal distribution. The right figure shows the same samples except each bin in the histogram contains the cumulative count of samples up to that bin, which approximates the shape of the CDF for this random variable. Now the right figure doesn't exactly represent an empirical distribution function because the Y-axis is not normalized to 1 and the samples are binned instead of just plotted cumulatively. Nonetheless, the idea remains the same. An example of an empirical CDF is given below:
 
 
-<img src="images/cumul_prob.png" width = 400>
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/cumul_prob.png" width = 400>
 
 This image sums up the intuition for empirical distribution function. The blue line is our empirical CDF whereas the  grey one is our theoretical CDF (i.e. plotted using parameters and fitting a probability function).
 
@@ -71,7 +70,7 @@ where
 - **F<sub>0</sub>(X)** = (No.of observations ≤ X)/(Total no.of observations) i.e. the non parametric empirical distribution
 - **F<sub>r</sub>(X)** = The theoretical frequency distribution of X - parametric (e.g. based on mean value) 
 
-<img src="./images/new_d.png" width="600">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/new_d.png" width="600">
 
 **Null Hypothesis:** There is no difference between the distribution of our sample and a normal distribution. 
 
@@ -119,7 +118,7 @@ $$
 $$ d = 11/60 = 0.183$$
 
 Here's the Smirnov d-statistic for reference: 
-![](images/1samp.png)
+![](https://curriculum-content.s3.amazonaws.com/data-science/images/1samp.png)
 
 
 The table value of d at 5% significance level is given by
@@ -173,7 +172,7 @@ Fx 0.1 0.2 0.3 0.4 0.5 0.6 0.6 0.6 0.6 0.6 0.6 0.7 0.7  0.7  0.8  0.8  0.9  1.0
 Fy 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.2 0.4 0.5 0.6 0.6 0.8  0.9  0.9  1.0  1.0  1.0
 
 ```
-<img src="images/dist_2.png" width = 600>
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/dist_2.png" width = 600>
 
 The Kolmogorov-Smirnov statistic is again the maximum absolute difference of the two observed distribution functions. From the above image, and also by feeding above values in the given formula, we get **d = 0.6**.
 
